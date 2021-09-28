@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.person.PersonFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/personTitleName"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/personImageProfile"
+        app:layout_constraintStart_toStartOf="@id/personImageProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Some Name" />
+
+    <Spinner
+        android:id="@+id/personSelectSpinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/personImageProfile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/personImageProfile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_person_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personSelectSpinner" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/personTextWin"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:minWidth="35dp"
+        android:text="@string/default_win"
+        app:layout_constraintStart_toEndOf="@id/personImageProfile"
+        app:layout_constraintTop_toTopOf="@id/personImageProfile" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/personWinTotal"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:hint="@string/default_point_value"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@id/personTextWin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/personTextWin"
+        app:layout_constraintTop_toTopOf="@id/personTextWin"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/personTextLose"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:minWidth="35dp"
+        android:text="Lose:"
+        app:layout_constraintBottom_toTopOf="@id/personTextTies"
+        app:layout_constraintStart_toEndOf="@id/personImageProfile"
+        app:layout_constraintTop_toBottomOf="@id/personTextWin" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/personLoseTotal"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:hint="@string/default_point_value"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@id/personTextLose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/personTextLose"
+        app:layout_constraintTop_toTopOf="@id/personTextLose"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/personTextTies"
+        style="@style/TextAppearance.AppCompat.Body1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:minWidth="35dp"
+        android:text="@string/default_ties"
+        app:layout_constraintBottom_toBottomOf="@+id/personImageProfile"
+        app:layout_constraintStart_toEndOf="@id/personImageProfile" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/personTiesTotal"
+        style="@style/TextAppearance.AppCompat.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="center"
+        android:hint="@string/default_point_value"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@id/personTextTies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/personTextTies"
+        app:layout_constraintTop_toTopOf="@id/personTextTies"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personImageProfile" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/personRecyclerMatch"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard"
+        tools:listitem="@layout/item_person_ranking" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

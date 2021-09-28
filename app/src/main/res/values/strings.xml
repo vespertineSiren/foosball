@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Foos Ball</string>
+
+    <string name="title_stats">Stats</string>
+    <string name="title_person">Person</string>
+    <string name="title_edit">Edit</string>
+
+    <string name="stats_title_match_rankings">Match History</string>
+    <string name="stats_title_person_rankings">Games Played</string>
+    <string name="stats_title_match">Match</string>
+    <string name="default_points">Points:</string>
+    <string name="default_subtract_one">-1</string>
+    <string name="default_add_one">+1</string>
+    <string name="default_save">Save</string>
+    <string name="default_reset">Reset</string>
+    <string name="default_point_value">0</string>
+    <string name="default_win">Win:</string>
+    <string name="default_ties">Ties:</string>
+
+    <string name="row_match_name_score">%s\nScore: %d</string>
+</resources>

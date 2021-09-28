@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rowMatchPrimaryNamePoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/rowMatchImageVersus"
+        app:layout_constraintEnd_toStartOf="@id/rowMatchImageVersus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rowMatchImageVersus"
+        tools:text="Player 1\nScore: 10" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rowMatchImageVersus"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginVertical="15dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_img_versus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/rowMatchSecondaryNamePoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/rowMatchImageVersus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rowMatchImageVersus"
+        app:layout_constraintTop_toTopOf="@id/rowMatchImageVersus"
+        tools:text="Player 2\nScore: 10" />
+
+    <View
+        android:id="@+id/rowMatchOutline"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/outline_border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    >
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.stats.StatsFragment">
+
+    <TextView
+        android:id="@+id/statsPersonWinTitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Most Wins"
+        app:layout_constraintEnd_toEndOf="@id/statsRecyclerPersonWin"
+        app:layout_constraintStart_toStartOf="@id/statsRecyclerPersonWin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statsRecyclerPersonWin"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/statsMatchTitle"
+        app:layout_constraintEnd_toStartOf="@id/statsRecyclerPerson"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statsPersonWinTitle"
+        tools:listitem="@layout/item_person_ranking" />
+
+    <TextView
+        android:id="@+id/statsPersonTitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/stats_title_person_rankings"
+        app:layout_constraintEnd_toEndOf="@id/statsRecyclerPerson"
+        app:layout_constraintStart_toStartOf="@id/statsRecyclerPerson"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statsRecyclerPerson"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/statsMatchTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/statsRecyclerPersonWin"
+        app:layout_constraintTop_toBottomOf="@id/statsPersonTitle"
+        tools:listitem="@layout/item_person_ranking" />
+
+    <TextView
+        android:id="@+id/statsMatchTitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/stats_title_match_rankings"
+        app:layout_constraintBottom_toTopOf="@id/statsRecyclerMatch"
+        app:layout_constraintEnd_toEndOf="@id/statsRecyclerMatch"
+        app:layout_constraintStart_toStartOf="@id/statsRecyclerMatch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/statsRecyclerMatch"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/statsViewAddMatch"
+        tools:listitem="@layout/item_match_ranking" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/statsViewAddMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@color/teal_200"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_home"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/stats_title_match"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/statsSpinnerPrimary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toStartOf="@id/statsImageVersus"
+            app:layout_constraintStart_toStartOf="@id/text_home"
+            app:layout_constraintTop_toBottomOf="@id/text_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/statsTextPointsPrimary"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/default_points"
+            app:layout_constraintBottom_toTopOf="@id/statsDividerMatch"
+            app:layout_constraintStart_toStartOf="@id/statsSpinnerPrimary"
+            app:layout_constraintTop_toBottomOf="@id/statsSpinnerPrimary" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/statsEditPointsPrimary"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:hint="@string/default_point_value"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@id/statsTextPointsPrimary"
+            app:layout_constraintEnd_toEndOf="@id/statsSpinnerPrimary"
+            app:layout_constraintStart_toEndOf="@id/statsTextPointsPrimary"
+            app:layout_constraintTop_toTopOf="@id/statsTextPointsPrimary" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/statsImageVersus"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_img_versus"
+            app:layout_constraintBottom_toBottomOf="@id/statsSpinnerPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/statsSpinnerPrimary" />
+
+        <Spinner
+            android:id="@+id/statsSpinnerSecondary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/statsImageVersus"
+            app:layout_constraintTop_toBottomOf="@id/text_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/statsTextPointsSecondary"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/default_points"
+            app:layout_constraintBottom_toTopOf="@id/statsDividerMatch"
+            app:layout_constraintStart_toStartOf="@id/statsSpinnerSecondary"
+            app:layout_constraintTop_toBottomOf="@id/statsSpinnerSecondary" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/statsEditPointsSecondary"
+            style="@style/TextAppearance.AppCompat.Body2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:hint="@string/default_point_value"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@id/statsTextPointsSecondary"
+            app:layout_constraintEnd_toEndOf="@id/statsSpinnerSecondary"
+            app:layout_constraintStart_toEndOf="@id/statsTextPointsSecondary"
+            app:layout_constraintTop_toTopOf="@id/statsTextPointsSecondary" />
+
+        <View
+            android:id="@+id/statsDividerMatch"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/teal_200"
+            app:layout_constraintBottom_toTopOf="@id/statsButtonSave" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/statsButtonSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:enabled="false"
+            android:text="@string/default_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/statsButtonReset"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/statsButtonReset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/default_reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/statsButtonSave" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
